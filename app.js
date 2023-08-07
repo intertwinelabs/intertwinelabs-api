@@ -13,7 +13,6 @@ const app = express();
 app.use(express.json());
 
 app.get('/api/ping', (req,res) => {
-
     res.status(200).send({
         message: "Ping successful!",
         method: "get"
