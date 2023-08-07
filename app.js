@@ -4,6 +4,9 @@
  * Date:    29 Jan 2023
  *
  * Simple API to respond to get/post methods for testing purpose
+ *
+ * History:
+ * 07 Aug 2023  RL  Added greeting function
  */
 
 const express = require('express');
@@ -25,6 +28,15 @@ app.post('/api/ping',(req,res) => {
         method: "post"
     });
 });
+
+// RL 20230807
+app.get('/hello',(req,res) => {
+    res.status(200).send({
+        message: "Greetings!",
+        method: "get"
+    });
+});
+// ------
 
 app.get('*', (req,res) => {
     res.status(200).send('~^0^~');
